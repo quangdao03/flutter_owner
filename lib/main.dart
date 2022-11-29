@@ -3,13 +3,14 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/home.dart';
 import 'package:http/http.dart' as http;
 
 Future<List<Album>> fetchAlbum() async {
   final headers = {
     'Content-type': 'application/json',
     'Authorization':
-        'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfRFJJVkVSLFJPTEVfVVNFUiIsImV4cCI6MTY2OTM0Mzc1Mn0.8ZA4a53D_tNJZLHzHirGZRji4Qhl-Nepm1I7fyFcZ7psfJSmRgnCzqcd065qIFfycUTcMYOnUnU6lUb3I71PcA',
+        'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImF1dGgiOiJST0xFX0FETUlOLFJPTEVfRFJJVkVSLFJPTEVfVVNFUiIsImV4cCI6MTY2OTgxODkwOH0.bF2GH5508NMrlCjGyUeVa0BVWHtD4LVGo0YS0CE23iqPf2nczMtODk2CskDAS7CsVu--ZzWw8PX_AqH2I6B3yg',
   };
   final response = await http.get(
       Uri.parse(
@@ -60,10 +61,7 @@ class _MyAppState extends State<MyApp> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    HomeScreen(),
     Text(
       'Index 1: Business',
       style: optionStyle,
